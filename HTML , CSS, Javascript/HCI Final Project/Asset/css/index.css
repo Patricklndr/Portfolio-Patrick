@@ -1,0 +1,147 @@
+.container{
+    margin: 40px auto;
+    overflow: auto;
+    text-align: center;   
+}
+
+.drop a{
+    width: 100%;
+}
+
+.container h1{
+    color: #D1E3DD;
+    margin-bottom: 40px;
+}
+
+.lineup h1{
+    margin-bottom: 40px;
+}
+
+.upcom{
+    display: inline-block;
+    width: 700px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.upcom img{
+    width: 700px;
+    height: auto;
+}
+
+.slider-inner{
+    display: inline-block;
+    width: 700px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 3px;
+}
+
+.slider-inner img{
+    display: none;
+    width: 700px;
+    height: auto;
+    opacity: 0;
+}
+
+.slider-inner img.active{
+    display: inline-block;
+}
+
+#first{
+    opacity: 1;
+}
+
+.prev,.next{
+    margin-top: 130px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.prev{
+    position: relative;
+    margin-right: -45px;
+    z-index: 100;
+}
+
+.next{
+    position:relative;
+    margin-left: -45px;
+    z-index: 100;
+}
+
+.lineup{
+    margin: 4% 5%;
+}
+
+div.gallery {
+    display: inline-block;
+    border: 1px solid #ccc;
+    background-color: #5762D5;
+    margin-bottom: 20px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+    background-color: #D1E3DD;
+    color: black;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 12px;
+    text-align: center;
+    padding-top: 0;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 49.99999%;
+    box-sizing: border-box;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .responsive {
+        width: 100%;
+    }
+
+    div.gallery {
+        border: 1px solid #ccc;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .copyright {
+        height: 50px;
+        width: 100%;
+        display: inline-block;
+        margin: 0;
+        padding-top: 24px;
+        padding-bottom: 0px;
+    }
+
+    .upcom, .upcom img{
+        width: 350px;
+        height: auto;
+    }            
+
+    .slider-inner{
+        width: 350px;
+        height: auto;
+    }
+
+    .slider-inner img{
+        width: 350px;
+        height: auto;
+    }
+}

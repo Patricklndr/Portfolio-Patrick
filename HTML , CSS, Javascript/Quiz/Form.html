@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    
+    <style>
+        .main{
+            width: 1000px;
+            height: auto;
+            margin-right: auto;
+            margin-left: auto;
+            font-size: 14pt;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+
+        .logo{
+            width:70px;
+        }
+        .wallpaper{
+            width: 1000px;
+            height: 500px;
+        }
+        ul{
+            list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         background-color:white;
+        }
+
+      li{
+        margin-left: 50px;
+          float: left;
+      }
+
+      li a{
+        margin-left: 50px;
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12pt;
+    font-family: Arial, Helvetica, sans-serif;
+      }
+
+      hr{
+          height:0px;
+          color:black;
+          width: 100%;
+      }
+
+      .foter img{
+       float: right;
+       margin-right: 40px;
+        width: 30px;
+       margin-top: 10px;
+    }
+
+    .foter{
+        background-color: green;
+    }
+
+    .foter p{
+        float: left;
+        margin-left: 20px;
+        color:white;
+        font-size: 14pt;
+    }
+
+    </style>
+
+
+
+</head>
+
+<body>
+ 
+    <header>
+    <div class="main"> 
+            <ul>
+            <li><img class="logo" src ="images/sf-logo.png" alt= "image not found" "></li>
+            <li><a href ="So Fresh.html">Home</a></li>
+            <li><a href ="Form.html">Order</a></li>
+            </ul>
+            <img class ="wallpaper" src="images/fruits-wallpaper.jpg" alt="image not found">
+     </div>
+    </header>
+    <div class="main">
+    <h2>Order Form</h2>
+    <hr>
+        
+    <div class="main">
+        <form action="So Fresh.html">
+            <label for="fullname">Full Name<br/>
+                <input type="txt" id="fname" name="fullname" placeholder=" Input Your Full Name">
+                </label><br/><br/>
+                <label for="fruit">Fruits<br/>
+                <input type="text" id="fr" name="fruits" placeholder=" Input Your Fruit Order/s">
+                </label><br/><br/>
+                <label for="addres">Address<br/>
+                <input type="text" id="ad" name="address" placeholder=" Input Your Address">
+                </label><br/><br/>
+                <label for="gender">Gender<br/>
+                    <input type="radio" name="radio">
+                    <label>Male</label>
+                    <input type="radio" name="radio">
+                    <label>Female</label>
+                </label><br/><br/>
+                <label for="pnumb">Phone Number<br/>
+                <input type="text" id="pn" name="phonenumber" placeholder=" Input Your Phone Number">
+                </label><br/><br/>
+                <input type="checkbox">
+                <label>I agree to terms and services agreement</label>
+                <br/><br/>
+                <input type="submit" value="Order">
+                
+            </form>
+                <br>
+                <br>
+
+            </div>
+            <footer>
+                <div class="main">
+                    <ul class="foter">
+                    <a href="https://youtube.com" target="_blank"><img src="images/yt-logo.png" alt="logo"></a>
+                    <a href ="https://facebook.com" target="_blank"><img src="images/fblogo.png"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="images/ig-logo.png" alt="logo"></a>
+                     <p>&copy;Software Laboratory Center 2019/2020</p>
+                    </ul>
+    
+                </div>
+            
+            </footer>
+
+    </div>
+
+
+
+</body>

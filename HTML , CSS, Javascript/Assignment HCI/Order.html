@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Jack Candy Store</title>
+
+    <style>
+         .heade{
+        background-color:#FFEB3B  ;
+        text-align: center;
+        color: #FF5722;
+        overflow: hidden;
+    }
+
+    .navbar{
+        overflow: hidden;
+        background-color: #FFC107;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .navbar a{
+        text-align: center;
+        font-size: 16px;
+        color: #ffffff;
+        padding: 14px 16px;
+        text-decoration: none;
+        width: 19%;
+        display: inline-block;
+    }
+
+    .navbar a:hover{
+        display: inline-block;
+        background-color:#FF9800 ;
+    }
+
+ 
+
+    label{
+        color: #FF5722;
+        font-size: 16pt;
+    }
+
+    h2{
+        text-align: center;
+        color:#FF5722 ;
+    }
+
+    input[type=text] {
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #FF9800 ;
+        color: #FF5722 ;
+        font-size: 13pt;
+        font-weight: bold;
+}
+
+    .content{
+    margin: 0 30%;
+    }
+
+    #candytype{
+        width: 100%;
+        color: #FF5722;
+        border: none;
+        border-bottom: 2px solid #FF9800 ;
+        font-size: 13pt;
+        font-weight: bold;
+    }
+
+    textarea{
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #FF9800 ;
+        color: #FF5722 ;
+        font-size: 13pt;
+        font-weight: bold;
+    }
+    
+    input[type=checkbox] {
+        height: 20px;
+        width: 20px;
+
+}
+
+.buttonadd{
+    text-align: center;
+}
+    input[type=reset]{
+        background-color: #FF5722 ;
+    font-size: 20px;
+    color: white;
+    padding: 15px 52px;
+    text-align: center;
+    margin: 2% 1%;
+    border: none;
+    }
+
+    input[type=button]{
+    text-align: center;
+    background-color: #FF5722 ;
+    font-size: 20px;
+    color: white;
+    padding: 15px 52px;
+    margin: 2% 1%;
+    border: none;
+    }
+
+    footer{
+    
+    color:red;
+    
+}
+
+    .foter{
+        list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         text-align: center;
+         background-color:#FFEB3B;
+         height: auto;
+        
+    }
+
+    .spanclass{
+        overflow: hidden;
+        text-align: center;
+        word-spacing: 6px;
+        width: 100%;
+        
+    }
+
+    #errorMsg{
+        
+        color: white;
+        background-color:#ff3333;
+        font-size: 16pt;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <div class = heade>
+           <h2> Bluejack Candy Store </h2>
+        </div>
+
+        <div class= navbar>
+            <a href="Bluejack Candy.html">Home</a>
+            <a href="Order.html">Order</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="About Us.html">About Us</a>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>Candy Order Form</h2>
+        <br>
+        <form method="post" id="BForm">
+            <label for="nama">Name</label> <br><br>
+            <div class= fom>
+            <input type="text" name= "nama" id="nama" placeholder="Fullname">
+            </div>
+           <br>
+
+            <label for= 'candytype'>Candy Type </label> <br><br>
+                <div class= fom>
+                    <select id='candytype' >
+                        <option value='Bubblegum'>Bubblegum</option>
+                        <option value = "Chocolate">Chocolate</option>
+                        <option value = "Chewy">Chewy</option>
+                        <option value="Lollipops">Lollipops</option>
+                        <option value="Gummy">Gummy</option>
+                    </select>
+                </div>
+           <br>
+
+            <label for="quantity">Quantity</label> <br><br>
+            <div class= fom>
+            <input type="text" name= "quantity" id="quantity" placeholder="1-12">
+            </div>
+           <br>
+
+           <label for="package">Package <br><br>
+           <div class= fom>
+            <input type="radio" name="radio" id="package" value="package">
+            <label for="radio"><b>Regular</b></label>
+            <br>
+            <input type="radio" name="radio" id="package2" value="package2">
+            <label for="radio"><b>Exclusive</b></label>
+           </label>
+           </div>
+        </label>
+          <br>
+
+        <label for="address">Address</label> <br><br>
+        <div class = fom>
+            <textarea name="address" id="address" cols="50" rows="4" placeholder="Street"></textarea>
+        </div>
+        <br>
+        <input type="checkbox" id="agreement" name="agreement">
+        <label for="agreement"><b>I Agree with the Terms and Condition</b></label><br>
+      
+        <div class="spanclass">
+        <p id="errorMsg"></p>
+        </div>
+
+        </div>
+        <div class=buttonadd> 
+        <input type="reset" id="reset" name="Reset" onclick="funcReset()">
+
+        <input type="button" id="submitBtn" value="Submit" onclick="funcSubmit()" >
+    </div>
+        </form>
+        <br>
+       
+
+    </div>
+
+    <footer>
+        <ul class="foter">
+       <h4>Copyright &copy; 2015 by Bluejack 15-1</h4>  
+    </ul>
+    </footer>
+
+    <script>
+            
+
+        function funcReset(){
+            alert("Form Resetted");
+        }
+
+        function funcSubmit(){
+            var nama = document.getElementById("nama").value;
+            var candy = document.getElementById("candytype").value;
+            var quantity = document.getElementById("quantity").value;
+            var package = document.getElementById("package");
+            var package2 = document.getElementById("package2");
+            var address = document.getElementById("address").value;
+            var agreement = document.getElementById("agreement");
+            var error = document.getElementById("errorMsg");
+            var valname = /^[a-zA-Z]+$/;
+            var valnumb = /^[0-9]+$/;
+            if(nama.length <5){
+                error.innerText="Name Must be minimum 5 character length";
+                return false;
+            }
+            else if(!nama.match(valname)){
+                error.innerText="Name Must be Alphabet";
+                return false;
+            }
+
+            else if(candy==null){
+                error.innerHTML ="Candy type must be chosen";
+                return false;
+            }
+            else if(quantity<1 || quantity>12){
+                error.innerHTML = "Quantity must be between 1 and 12";
+                return false;
+            }
+            else if(!quantity.match(valnumb)){
+                error.innerHTML = "Quantity must be number";
+                return false;
+            }
+            else if(package.checked == false && package2.checked == false){
+                error.innerHTML = "Package must be chosen";
+                return false;
+            }
+            
+            else if(address.length<5){
+                error.innerHTML = "Address must be minimum 5 character length";
+                return false;
+            }
+            else if(agreement.checked == false){
+                error.innerHTML = "Agreement must be checked";
+                return false;
+            }
+            else if (package.checked == true){
+                confirm("Name: "+nama+"\nCandy Type: "+candy+"\nQuantity: "+quantity+"\nPackage: Regular\nAddress: "+address);
+                funcfeed();
+            }
+            
+            else if (package2.checked == true){
+                confirm("Name: "+nama+"\nCandy Type: "+candy+"\nQuantity: "+quantity+"\nPackage: Exclusive\nAddress: "+address);
+                funcfeed();
+            }
+        }
+
+        function funcfeed(){
+            var feedback = prompt("Please input if you have any additional message for your Order");
+
+            alert("Your Message has been saved, Thankyou for your purchase :D");
+            alert("Thankyou for your purchase :D");
+        }
+
+    </script>
+</body>
+</html>

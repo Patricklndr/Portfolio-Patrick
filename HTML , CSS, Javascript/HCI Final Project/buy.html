@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Ticket</title>
+    <link rel="stylesheet" href="Asset/css/template.css">
+    <link rel="stylesheet" href="Asset/css/buy.css">
+    <script src="Asset/js/jquery.min.js"></script>
+    <script src="Asset/js/buy.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <a href="index.html">
+                <img src="Asset/img/logo/logo.png" alt="">
+            </a>
+        </header>
+        <nav>
+            <div class="dropdown">
+                <div class="tambahan">
+                </div>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <div class="drop">
+                    <a href="store.html">Merch Store</a>
+                    <div class="dropdown-content">
+                        <a href="store.html#acc">Accessories</a>
+                        <a href="store.html#hood">Hoodie</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="buy.html">Buy Now</a>
+                <div class="tambahan">
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <h1>Buy Ticket</h1>
+            <button id="seat" class="btn">Hide Seat</button>
+            <div class="container">
+                <img class="image" src="Asset/img/Seating.png" alt="">
+                <form action="" class="forms">                    
+                    <label class="label" for="tickettype">Ticket Type</label><br>
+                    <select id="tickettype" name="tickettype" class="ticketpe">
+                        <option value="Platinum">Platinum</option>
+                        <option value="Gold">Gold</option>
+                        <option value="">Silver</option>
+                        <option value="Bronze">Bronze</option>
+                    </select> <br><br>
+                    
+                    <label class="label" for="quantity">Quantity</label><br>
+                    <input type="number" id="quantity" placeholder="1-10" name="quantity" min="1" max="10"><br><br>
+
+                    <label class="label" for="name">Full Name</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+                    
+                    <label class="label" for="email">Email</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                    
+                    <label class="label" for="tel">Phone Number</label><br>
+                    <input type="tel" id="phone" name="Phone"><br><br>
+                    
+                    <label class="label" for="address">Address</label><br>
+                    <input type="text" id="address" name="address"><br><br>
+                    
+                    <input type="checkbox" name="terms" id="terms">  
+                    <label class="option">I Agree Terms & Coditions </label>
+                    <br>
+                    <h2 id="error"></h2>
+                </form>
+                
+                <button id="loginbtn" class="btn" onclick="buy()">Buy Now</button>
+            </div>
+        </div>
+        <div class="thanks">
+            <h1>Thanks For Your Purchases</h1>
+            <h1>Your Order ID :</h1>
+            <h1 id="orderid"></h1>
+            <h1>Your Online Ticket will be send to your Email and Phone Number</h1>
+            <h1>For more information, you can contact us <a href="about.html">here</a></h1>
+            <h1></h1>
+
+        </div>
+        <div class="footer">
+            <h2 class="copyright">
+                Copyright &copy; 2020 By Miku e-SKpo
+            </h2>
+        </div>
+    </div>
+</body>
+</html>

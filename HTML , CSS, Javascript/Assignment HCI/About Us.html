@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BlueJack Candy Store</title>
+
+<style>
+    .heade{
+        background-color:#FFEB3B  ;
+        text-align: center;
+        color: #FF5722;
+        overflow: hidden;
+    }
+
+    .navbar{
+        overflow: hidden;
+        background-color: #FFC107;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .navbar a{
+        text-align: center;
+        font-size: 16px;
+        color: #ffffff;
+        padding: 14px 16px;
+        text-decoration: none;
+        width: 19%;
+        display: inline-block;
+    }
+
+    .navbar a:hover{
+        display: inline-block;
+        background-color:#FF9800 ;
+    }
+
+    
+
+    footer{
+    
+    color:red;
+    
+}
+
+    .foter{
+        list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         text-align: center;
+         background-color:#FFEB3B;
+         height: auto;
+        
+    }
+
+
+    input[type=button]{
+    text-align: center;
+    background-color: #FF5722 ;
+    font-size: 20px;
+    color: white;
+    padding: 15px 72px;
+    margin: 2% 1%;
+    border: none;
+    border-radius: 10px;
+    }
+
+.content{
+    margin: 0 20%;
+}
+
+h2{
+    text-align: center;
+        color:#FF5722 ;
+}
+
+.buttonAdd{
+    text-align: center;
+}
+
+
+.slider img{
+    width: 400px;
+    height: 250px;
+    display: none;
+    text-align: center;
+    background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+
+img.active{
+    display: inline-block;
+}
+#prev{
+    left: 31%;
+    border-radius: 50%;
+}
+
+ #prev, #next {
+  
+  position: absolute;
+  top: 60%;
+  width: auto;
+  padding: 16px;
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+  background-color:#FFEB3B ;
+  border: none;
+}
+#next{
+  right: 31%;
+  border-radius: 50%;
+}
+
+#stories{
+    text-align: justify;
+    color: #FF5722;
+}
+
+#stories p{
+    text-indent: 50px;
+}
+
+#ContentAbout{
+    display: none;
+}
+
+#Sliderimg{
+    display: none;
+}
+
+#storypart{
+    display: none;
+}
+
+</style>
+
+<script src="jquery-3.5.1.min.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class = heade>
+           <h2> Bluejack Candy Store </h2>
+        </div>
+
+        <div class= navbar>
+            <a href="Bluejack Candy.html">Home</a>
+            <a href="Order.html">Order</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="About Us.html">About Us</a>
+        </div>
+        
+    </header>
+<div class="content">
+        <h2>About Us</h2>
+    <div class="buttonAdd">
+    <form method="POST">
+    <input type='button' id="buttonOpen" value="Open"></button>
+    <br>
+    </form>
+
+    <div id="Sliderimg">
+        <div class="slider">
+            <img src="bubblegum.jpg" class="active" alt="">
+            <img src="chewy.jpg" alt="">
+            <img src="chocolate.jpg" alt="">
+            <img src="gummy.jpg" alt="">
+            <img src="lollipops.jpg" alt="">
+         </div>
+            <button id="prev"><<</button>
+            <button id="next">>></button>
+    </div>
+    
+    <div id="storypart">
+        <div id="stories">
+            <h2>Story</h2>
+            <p>Candy, also called sweets or lollies, is a confection that features sugar as a principal ingredient. The category, called sugar confectionery, encompasses any sweet confection, including chocolate, chewing gum, and sugar candy. Vegetables, fruit, or nuts which have been glazed and coated with sugar are said to be candied.
+            <br></p>
+            <p>Bluejack Candy Store manufactures a line of handcrafted quality chocolates and sells over a thousand different types of candies. Bluejack Candy Store quickly rose up as top contender in the industry.
+            </p>
+            </div>
+    </div>
+    <br>
+
+    <div id="ContentAbout">
+        <form>
+        <input type="button" id="Gallery" value="Gallery">
+            </button>
+            <input type="button" id="Story" value="Story">
+            </button>
+            </form>
+    </div>
+</div>
+</div>
+    
+
+    <footer>
+        
+        <ul class="foter">
+       <h4>Copyright &copy; 2015 by Bluejack 15-1</h4>  
+    </ul>
+    </footer>
+
+</div>
+
+<script>
+  $(document).ready(function(){ 
+    $("#buttonOpen").click(function(){
+     
+
+        var button = document.getElementById("buttonOpen");
+        if(button.value == "Open"){
+            button.value = "Close";
+              $("#ContentAbout").slideToggle();
+        }
+        else{
+            button.value = "Open";
+            $("#ContentAbout").slideToggle();
+            $("#Sliderimg").hide();
+            $("#storypart").hide();
+        }
+
+    })
+       
+
+        $("#Gallery").click(function(){
+            $("#storypart").hide();
+            $("#Sliderimg").slideToggle();
+                
+        })
+           
+            $('#next').click(function(){
+                var currimg = $('.active');
+                var nextimg = currimg.next();
+
+                if(nextimg.length){
+                    currimg.removeClass('active');
+                    nextimg.addClass('active');
+                }
+            })
+
+            $('#prev').click(function(){
+                var currimg = $('.active');
+                var previmg = currimg.prev();
+
+                if(previmg.length){
+                    currimg.removeClass('active');
+                    previmg.addClass('active');
+                }
+            })
+        
+        
+        $("#Story").click(function(){
+            $("#Sliderimg").hide();
+            $("#storypart").slideToggle();
+            
+        })
+
+        
+    })
+
+
+
+</script>
+
+
+</body>
+
+
+
+</html>

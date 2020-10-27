@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BlueJack Candy Store</title>
+
+<style>
+    .heade{
+        background-color:#FFEB3B  ;
+        text-align: center;
+        color: #FF5722;
+        overflow: hidden;
+    }
+
+    .navbar{
+        overflow: hidden;
+        background-color: #FFC107;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .navbar a{
+        text-align: center;
+        font-size: 16px;
+        color: #ffffff;
+        padding: 14px 16px;
+        text-decoration: none;
+        width: 19%;
+        display: inline-block;
+    }
+
+    .navbar a:hover{
+        display: inline-block;
+        background-color:#FF9800 ;
+    }
+
+    
+
+    footer{
+    
+    color:red;
+    
+}
+
+    .foter{
+        list-style-type: none;
+         margin: 0;
+         padding: 0;
+         overflow: hidden;
+         text-align: center;
+         background-color:#FFEB3B;
+         height: auto;
+        
+    }
+
+    .content{
+    text-align: center;
+    color: #FF5722 ;
+}
+
+#txtName{
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content button{
+    background-color: #FF5722 ;
+    font-size: 20px;
+    color: white;
+    padding: 15px 32px;
+    margin: 4px 2px;
+}
+
+#tableContent{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            border-collapse: collapse;
+        }
+
+        #tableContent tr{
+            width: 20%;
+            height: auto;
+            background-color: #FFC107;
+        }
+
+        #tableContent tr:nth-child(odd){
+            background-color: #FFEB3B;
+        }
+
+        #tableContent th{
+            background-color: #FFEB3B;
+            padding-bottom: 30px;
+            width: 15%;
+            color: #FF5722;
+            font-size: 25px;
+            margin-top: 20px;
+            font-family: Myriad Pro;
+        }
+
+        #tableContent td{
+            color: #FF5722;
+            width: 15%;
+        }
+
+        #tableContent td img{
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .buttonAdd{
+            background-color: #FF9800 ; 
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            margin: 2% 1%;
+            font-size: 14px;
+            border: none;
+        }
+
+        .txtCode{
+            color: #FF9800 ;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        
+        #feedBtn{
+            background-color: #FF5722 ;
+            color: white;
+            padding: 15px 32px;
+            margin: 4px 2px;
+            font-size: 14px;
+            border: 0;
+            
+        }
+</style>
+
+
+
+</head>
+
+<body>
+    <header>
+        <div class = heade>
+           <h2> Bluejack Candy Store </h2>
+        </div>
+
+        <div class= navbar>
+            <a href="Bluejack Candy.html">Home</a>
+            <a href="Order.html">Order</a>
+            <a href="Feedback.html">Feedback</a>
+            <a href="About Us.html">About Us</a>
+        </div>
+    </header>
+
+    <div class= "content">
+        <h2>Feedback</h2>
+       <div id="ContentFeed" style="margin: 0 8%;"></div>
+       <button id="feedBtn" onclick="Input()">Give Us Feedback</button>
+
+    </div>
+    
+
+    <footer>
+        
+        <ul class="foter">
+       <h4>Copyright &copy; 2015 by Bluejack 15-1</h4>  
+    </ul>
+    </footer>
+
+</div>
+
+<script>
+    var name = "";
+    var choose;
+    var random ="";
+    var feedbck;
+    var data = [];
+
+    function Input(){
+        name = prompt("Please input your name: ")
+            
+        if(name == null){
+            alert("Name Can't be empty");
+            Input();
+        }    
+        else if(name == ""){
+            alert("Name Can't be empty");
+            Input();
+        }
+        else{
+            RandId();
+            candy();
+        }
+    }
+
+    function candy(){
+        choose= prompt("Please Choose Candy Type:\n 1. Bubble Gum Candy\n 2. Chocolate Candy\n 3. Chewy Candy\n 4. Lollipops Candy\n 5. Gummy Candy");
+
+        if(choose<1 && choose>5){
+            alert("Number must between 1 and 5");
+            candy();
+        }
+        else if(choose >= 1 && choose <=5){
+            feedback();
+        }
+        else{
+            alert("Input must be number");
+            candy();
+        }
+    }
+
+    function feedback(){
+            feedbck = prompt("Please write a descriptional feedback for us [5 - 25 words length]: ");
+
+            if(feedbck.length <5){
+                alert("feedback message must be minimal 5 words");
+                feedback();
+            }
+            else if(feedbck.length > 25){
+                alert("feedback message can't be more than 25 words");
+                feedback();
+            }
+            else{
+                view();
+            }
+        }
+
+    
+    function view(){
+        var candyType;
+        var obj = {type : choose, message : feedbck, date : getDate(), time : getTime()}
+        data.push(obj);
+
+        var FeedDisp = '<h3 id = "txtName">'
+                        +'</h3>'
+                        +'<div id = "feedtable">'
+                        +'</div>'
+                        
+       ContentFeed.innerHTML = FeedDisp;
+       document.getElementById('feedBtn').style.display = "none";         
+       document.getElementById('txtName').innerHTML = 'Dear, ' + name; 
+       var table = '<table id="tableContent">'
+            + '<tr>'
+            + '<th>Image</th>'
+            + '<th>Type</th>'
+            + '<th style="text-align:left;">Feedback</th>'
+            + '<th>Date</th>'
+            + '<th>Time</th>'
+            + '</tr>'
+
+        for(var i = 0;i<data.length;i++){
+            table += '<tr>'
+                +'<td>'
+                + '<img src="'
+                if(data[i].type==1){
+                    table += 'bubblegum.jpg';
+                    candyType = "Bubblegum";
+                }
+                else if(data[i].type==2){
+                    table += 'chocolate.jpg';
+                    candyType = "Chocolate";
+                }else if(data[i].type == 3){
+                    table += 'chewy.jpg';
+                    candyType = "Chewy";
+                }else if(data[i].type == 4){
+                    table += 'lollipops.jpg';
+                    candyType = "Lollipops";
+                }else if(data[i].type == 5){
+                    table += 'gummy.jpg';
+                    candyType = "Gummy";
+                }
+                table += '"'+
+                '</td>'+
+                '<td>'+
+                candyType+
+                '</td>'+
+                '<td style="text-allign: left; width="40%">'+
+                data[i].message+
+                '</td>'+
+                '<td>'+
+                data[i].date+
+                '</td>'+
+                '<td>'+
+                data[i].time+
+                '</td>'+
+                '</tr>'
+            
+        }
+        table += '</table>'
+            +'<h3 class="txtcode">Code : '+random +'</h3>'
+            + '<button class="buttonAdd" onclick="candy()">'
+            + 'Add More'
+            + '</button>'
+            + '<button class="buttonAdd" onclick="submit()">'
+            + 'Submit'
+            + '</button>'
+        
+            feedtable.innerHTML = table;
+               
+    }
+    function submit(){
+        var code = prompt("Verify Code ['"+random+"']")
+        if (code==random){
+            var thankmessage = '<h2>'
+                +'Thank you For Your Feedback'
+                +'</h2>'
+              ContentFeed.innerHTML =thankmessage;
+              random="";
+              document.getElementById(feedBtn).style.display = "inline-block"; 
+        }
+        else if(name==null){
+            return;
+        }
+        else{
+            alert("Fail to validate the code");
+                submit();
+        }
+    }    
+    function RandId(){
+        var chara ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var length = chara.length;
+
+        for(var i =0 ; i<2;i++){
+            random += chara.charAt(Math.floor(Math.random()* length));
+        }
+        for(var i =0; i<3;i++){
+            random+= Math.floor(Math.random()*10);
+        }
+
+    }
+
+    function getDate(){
+            var day = new Date();
+            var dayDate = day.getDate() + "/" +(day.getMonth()+1) + "/" + day.getFullYear();
+            return dayDate;
+        }
+
+        function getTime(){
+            var  day = new Date();
+            var time = day.getHours() + ":" + day.getMinutes() + ":" + day.getSeconds();
+            if(day.getHours > 12){
+                time += " PM";
+            }
+            else{
+                time += " AM";
+            }
+
+            return time;
+        }
+
+</script>
+
+
+
+</body>
+</html>

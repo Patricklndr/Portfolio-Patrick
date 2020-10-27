@@ -1,0 +1,44 @@
+.footer{
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.copyright {
+    margin: 0;
+}
+
+.drop a{
+    width: 100%;
+}
+
+.content p{
+    margin: 0 8%;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 18pt;
+}
+
+.content h1 {
+    margin-top: 50px;
+}
+
+.contact-us {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    /* margin: 0 10%; */
+}
+
+.contact-us a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    width: 20%;
+    font-size: 100%;
+}
+
+.contact-us a img{
+    width: 10%;
+    height: auto;
+}

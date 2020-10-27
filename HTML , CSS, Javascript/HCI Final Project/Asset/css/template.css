@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Myriad Pro;
+    font-size: 16pt;
+}
+
+header{
+    background-color: #5762D5;
+    margin: 0;
+    height: auto;
+    width: auto;
+    text-align: center;
+    color:#FFFFFF;
+}
+
+header a{
+    text-decoration: none;
+    display: inline-block;
+}
+
+header a img {
+    width: auto;
+    height: 150px;
+}
+
+body{
+    background-color: #575366;
+}
+
+nav{    
+    background-color: #5762D5;
+}
+
+.dropdown{
+    height: fit-content;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+.tambahan{
+    display: inline-block;
+    width: 6%;
+}
+
+.drop{
+    display: inline-block;
+    width: 17%;
+    text-align: center;
+}
+
+.dropdown a{
+    /* float: right */
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+    width: 17%;
+    color:#FFFFFF;
+    padding: 14px 0px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.dropdown a:hover{
+    background-color: #D1E3DD;
+    color: black;
+}
+
+.drop:hover{
+    background-color: #D1E3DD;
+    color: black;
+}
+
+.dropdown .drop:hover .dropdown-content{
+    z-index: 100;
+    display: block;
+}
+
+.dropdown-content{
+    display: none;
+    position: fixed;
+    color: black;
+    background-color: #5762D5;
+    width: 17%;
+}
+
+.dropdown-content a{
+    display: block;
+    width: 100%;
+}
+
+.footer{
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+.main{
+    height: auto;
+}
+
+.content{
+    text-align: center;
+    color: #D1E3DD;
+    background-color: #575366;
+}
+
+.gambarhomeImage{
+    border-radius: 50%;
+    width: 400px;
+    height: auto;
+}
+.text-home{
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.text-welcome{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.copyright{
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    font-size: 16px;
+    padding: 20px 0;
+    background-color: #5762D5;
+}
+
+@media only screen and (max-width: 800px){
+    .tambahan{
+        display: none;
+    }
+
+    .dropdown a{
+        padding-left: 12px;
+        display: block;
+        text-align: left;
+        width: 100%;
+    }
+
+    .drop{
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown .drop:hover .dropdown-content{
+        display: block;
+    }
+    
+    .dropdown-content{
+        display: none;
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-content a{
+        display: block;
+        width: 100%;
+        padding-left: 8%;
+    }
+}
